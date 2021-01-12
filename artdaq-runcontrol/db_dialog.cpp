@@ -26,7 +26,8 @@ db_dialog::~db_dialog()
 void db_dialog::populateLvConfiguration()
 {
   QProcess conftoolpy;
-  conftoolpy.start("conftool.py", QStringList() << "getListOfAvailableRunConfigurations");
+  conftoolpy.start("conftool.py", QStringList() << " getListOfAvailableRunConfigurationPrefixes");
+  //getListOfAvailableRunConfigurationsSubtractMasked" << " flags.fcl");
   conftoolpy.waitForFinished();
   QByteArray byte_status = conftoolpy.readAll();
   QTextCodec* codec = QTextCodec::codecForName("UTF-8");
