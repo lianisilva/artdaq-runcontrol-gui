@@ -26,7 +26,12 @@ db_dialog::~db_dialog()
 void db_dialog::populateLvConfiguration()
 {
   QProcess conftoolpy;
-  conftoolpy.start("conftool.py", QStringList() << " getListOfAvailableRunConfigurationPrefixes");
+  QProcess conftoolpy_export;
+  conftoolpy_export.setWorkingDirectory("~/work-db-v4-dir/rc");
+
+  conftoolpy.start("conftool.py", QStringList() << "getListOfAvailableRunConfigurationsSubtractMasked" << "flags.fcl");
+  //getListOfAvailableRunConfigurations");
+  // getListOfAvailableRunConfigurationPrefixes");
   //getListOfAvailableRunConfigurationsSubtractMasked" << " flags.fcl");
   conftoolpy.waitForFinished();
   QByteArray byte_status = conftoolpy.readAll();
