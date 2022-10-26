@@ -8,7 +8,7 @@ add_definitions(-DSYSTEM="slf7-x86_64-e19-prof")
 
 add_definitions(-DGIT_HASH="warawara")
 add_definitions(-DGIT_BRANCH="master")
-
+cet_add_compiler_flags( -Wno-deprecated-declarations )
 # # Not working attempt:
 # add_definitions(-DVERSION="${CPACK_PACKAGE_VERSION}")
 # add_definitions(-DNAME="${CPACK_PACKAGE_NAME}")
