@@ -19,7 +19,7 @@ fcldir      -
 #
 product			version	       optional
 qt         		v5_15_6a
-xmlrpc_c		v1_54_06
+xmlrpc_c		v1_54_06a
 cetbuildtools   	v7_17_01       -       only_for_build
 end_product_list
 
