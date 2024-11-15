@@ -84,7 +84,7 @@ void db_dialog::bSelectPressed()
   conftoolpy_export.setWorkingDirectory(export_dir);
   conftoolpy_export.start("conftool.py", QStringList()
                           << "exportConfiguration" << selected_db_config);
-  conftoolpy_export.waitForFinished();
+  conftoolpy_export.waitForFinished(90000); //Wait for 90 seconds before timing out when exporting the database configuration.
   conftoolpy_export_output = conftoolpy_export.readAllStandardOutput();
   qDebug()  << "\n conftool.py exportConfiguration" << conftoolpy_export_output;
   this->setSelectedDBConfig(selected_db_config);
