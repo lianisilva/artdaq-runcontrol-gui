@@ -33,7 +33,7 @@ void db_dialog::populateLvConfiguration()
   //getListOfAvailableRunConfigurations");
   // getListOfAvailableRunConfigurationPrefixes");
   //getListOfAvailableRunConfigurationsSubtractMasked" << " flags.fcl");
-  conftoolpy.waitForFinished();
+  conftoolpy.waitForFinished(60000); //Wait for 60 seconds before timing out when exporting the database configuration.
   QByteArray byte_status = conftoolpy.readAll();
   QTextCodec* codec = QTextCodec::codecForName("UTF-8");
   daq_string = codec->codecForMib(106)->toUnicode(byte_status).split("\n", QString::KeepEmptyParts);
