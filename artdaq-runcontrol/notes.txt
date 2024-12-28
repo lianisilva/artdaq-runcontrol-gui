@@ -1,0 +1,10 @@
+"daqinterfacestate.hpp" initializes state diagram function names
+"daqinterfacestate.cpp" creates the state diagram functions as member functions of daqInterfaceState object class, also created here
+
+"mainwindow.cpp" is the mother file
+    the string "CONFIGURATE" is in mainwindow.ui and there are several functions with the name in mainwindow.cpp, initialized in mainwindow.hpp
+    connect() uses a socket to connect to a remote server?
+        connect(int socket, const struct sockaddr *address, socklen_t address_len)
+    void MainWindow::status(const QString& status) sets a case for each state: the state diagram, what functions are enabled
+
+    where is the included file "ui_mainwindow.h" ??
